@@ -1,34 +1,59 @@
-# Contributing to meme-images
+# 🖼️ Meme Images
 
-Thanks for contributing memes! 🎉  
-This repository manages **all meme images and metadata** used by the meme-repo application.
+This repository contains **all meme assets** used by the Meme Repo application.
 
----
+It is responsible for:
+- Meme image files
+- Meme metadata (`meta-data.json`)
+- Hosting assets via **GitHub Pages**
 
-## 🖼️ Adding memes
-
-1. Add image files under the `images/` directory  
-   Supported formats:
-   - `.gif`
-   - `.png`
-   - `.jpg`
-   - `.jpeg`
-   - `.webp`
-
-2. Follow naming guidelines:
-   - Avoid spaces
-   - Keep filenames short  
-   Example: `confused-cat.gif`
-
-3. Commit the image file.
+The application logic and UI live in a separate repository:  
+👉 https://github.com/sriharshabammidi/meme-repo
 
 ---
 
-## 🗂️ Updating metadata (`meta-data.json`)
+## 📦 What This Repo Contains
 
-Every meme must have a metadata entry in `meta-data.json`.
+### 🖼️ Images
+- Located under the `images/` directory
+- Supported formats:
+  - `.gif`
+  - `.png`
+  - `.jpg`
+  - `.jpeg`
+  - `.webp`
 
-### Basic structure
+### 🗂️ Metadata
+- `meta-data.json` contains searchable metadata for all memes
+- Used by the client-side search engine in `meme-repo`
+
+---
+
+## 🌐 Hosting
+
+This repository is hosted using **GitHub Pages** and serves as a static asset CDN.
+
+Base URL: https://sriharshabammidi.github.io/meme-images
+
+Assets are consumed dynamically by the UI using this base URL.
+
+---
+
+## 🗂️ Repository Structure
+```
+meme-images/
+├── images/
+│ ├── meme1.webp
+│ ├── meme2.gif
+│ └── ...
+├── meta-data.json
+└── README.md
+```
+## 🧠 Metadata Format (`meta-data.json`)
+
+Each meme must have an entry in `meta-data.json`.
+
+### Example
 
 ```json
 {
@@ -38,44 +63,22 @@ Every meme must have a metadata entry in `meta-data.json`.
   "Keywords": ["cat", "funny", "meme"]
 }
 ```
-### Field descriptions
+### 🔗 Related Repository
 
-- **Id (string, required)** : A unique GUID identifying the meme.
-- **Name (string, required)** : Human-readable display name.
-- **File (string, required)** : Name of the file, must exactly match the filename under `images/`.
-- **Keywords (array of strings, required)** : Used by the client-side search engine.
-- **Optional fields (ignored by the app but allowed)**: Source, Description
----
-
-## ✅ Validation checklist
-
-Before submitting:
-
-- meta-data.json is valid JSON (no trailing commas)
-- File value matches the image filename exactly
-- Id is present and unique
-- Keywords are relevant and lowercase where possible
-
-----
-
-## 🧾 Removal requests (copyright / takedown)
-
-If you believe you own the copyright to a meme and want it removed:
-
-- Open a Removal request issue
-    - (Issue template: .github/ISSUE_TEMPLATE/remove-meme.md)
-
-- Include:
-    - File path (e.g. images/funny-cat.gif) or clear identification
-    - Proof of ownership (source link or documentation)
-    - Optional contact information (email or GitHub handle)
-
-We will review and remove content where appropriate.
-
----
-## 🔗 Related Repository
-
-Application code lives in:
+Application UI and logic:
 👉 https://github.com/sriharshabammidi/meme-repo
 
-Thanks for sharing memes responsibly 😄
+## 🤝 Contribution Guidelines
+- Keep all UI and logic changes in `meme-repo`
+
+- Keep all images and metadata in `meme-images`
+
+- Ensure configuration changes go through config.js
+
+- Read more on [CONTRIBUTING.md](/CONTRIBUTING.md)
+
+### 📄 License
+
+All images belong to their respective owners.
+
+This repository is intended for educational and demonstrational purposes.
